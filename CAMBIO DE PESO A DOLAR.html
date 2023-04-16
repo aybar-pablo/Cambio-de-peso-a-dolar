@@ -1,0 +1,88 @@
+ <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cambio a dolares</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="estilos2.css" />
+   
+
+</head>
+
+<body>
+    
+    <h2> Cambio de dolares a pesos </h2>
+ <form>
+        <label for="dolares">Dólares:</label>
+        <input type="number" id="dolares" name="dolares" required>
+      
+        <label for="pesos">Pesos:</label>
+        <input type="number" id="pesos" name="pesos" required readonly>
+      
+        <button type="button" id="convertir">Convertir</button>
+  </form>
+<script>
+     const dolaresInput = document.getElementById("dolares");
+     const pesosInput = document.getElementById("pesos");
+     const convertirBtn = document.getElementById("convertir");
+
+     convertirBtn.addEventListener("click", () => {
+     const dolares = parseFloat(dolaresInput.value);
+     const pesos = dolares * 300;
+      pesosInput.value = pesos.toFixed(2);
+});
+</script>
+
+     <h2>Cambio de Pesos a Dolares</h2>
+<form>
+    <label for="pesos">Pesos:</label>
+    <input type="number" id="pesos" name="pesos" required>
+  
+    <label for="dolares">Dólares:</label>
+    <input type="number" id="dolares" name="dolares" required readonly>
+  
+    <button type="button" id="convertir">Convertir</button>
+  
+</form>
+<script>
+const pesosInput = document.getElementById("pesos");
+const dolaresInput = document.getElementById("dolares");
+const convertirBtn = document.getElementById("convertir");
+
+convertirBtn.addEventListener("click", () => {
+  const pesos = parseFloat(pesosInput.value);
+  const dolares = pesos/300;
+  dolaresInput.value = dolares.toFixed(2);
+});
+</script>
+
+
+<h2>Temperaturas</h2>
+<form>
+    <label for="centigrados">Grados centígrados:</label>
+    <input type="number" id="centigrados" name="centigrados" required>
+  
+    <label for="fahrenheit">Grados Fahrenheit:</label>
+    <input type="number" id="fahrenheit" name="fahrenheit" required readonly>
+  
+    <button type="button" id="convertir">Convertir</button>
+  </form>
+
+
+
+<script> 
+const centigradosInput = document.getElementById("centigrados");
+const fahrenheitInput = document.getElementById("fahrenheit");
+const convertirBtn = document.getElementById("convertir");
+
+convertirBtn.addEventListener("click", () => {
+  const centigrados = parseFloat(centigradosInput.value);
+  const fahrenheit = (centigrados * 9 / 5) + 32;
+  fahrenheitInput.value = fahrenheit.toFixed(2);
+});
+
+</script>
+
+</body>
+
+</html>
